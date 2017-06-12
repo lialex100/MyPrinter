@@ -8,8 +8,11 @@
 //===========================================================================
 //============================= 三角洲3D打印机===============================
 //===========================================================================
-// For a Delta printer replace the configuration files with the files in the
-// example_configurations/delta directory.
+//===========================================================================
+//============================= DELTA Printer ===============================
+//===========================================================================
+// For Delta printers start with one of the configuration files in the
+// example_configurations/delta directory and customize for your machine.
 //
 
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
@@ -97,6 +100,11 @@
 //===========================================================================
 //==============================   三角洲设置   =============================
 //===========================================================================
+//===========================================================================
+//============================== Delta Settings =============================
+//===========================================================================
+
+
 // Enable DELTA kinematics
 #define DELTA
 
@@ -139,6 +147,13 @@
 //===========================================================================
 //=============================    传感器设置    ============================
 //===========================================================================
+// @section temperature
+
+//===========================================================================
+//============================= Thermal Settings ============================
+//===========================================================================
+
+
 //
 //--NORMAL IS 4.7kohm PULLUP!-- 1kohm pullup can be used on hotend sensor, using correct resistor and table
 //
@@ -210,6 +225,12 @@
 //#define EXTRUDER_WATTS (12.0*12.0/6.7) //  P=I^2/R
 //#define BED_WATTS (12.0*12.0/1.1)      // P=I^2/R
 
+//===========================================================================
+//============================= PID Settings ================================
+//===========================================================================
+// PID Tuning Guide here: http://reprap.org/wiki/PID_Tuning
+
+
 // PID settings:
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP
@@ -240,6 +261,11 @@
 //    #define  DEFAULT_Ki 2.25
 //    #define  DEFAULT_Kd 440
 #endif // PIDTEMP
+
+
+//===========================================================================
+//============================= PID > Bed Temperature Control ===============
+//===========================================================================
 
 // Bed Temperature Control
 // Select PID or bang-bang with PIDTEMPBED. If bang-bang, BED_LIMIT_SWITCHING will enable hysteresis
@@ -290,6 +316,9 @@
 
 //===========================================================================
 //=============================    机械方面设置   ===========================
+//===========================================================================
+//===========================================================================
+//============================== Endstop Settings ===========================
 //===========================================================================
 
 // Uncomment the following line to enable CoreXY kinematics
@@ -351,6 +380,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define INVERT_E1_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E2_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 
+// @section homing
+
 // ENDSTOP SETTINGS:
 // Sets direction of endstops when homing; 1=MAX, -1=MIN
 #define X_HOME_DIR 1
@@ -372,6 +403,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS)
 #define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS)
 //=============================  自动调平配置  ===========================
+//===========================================================================
+//=============================== Bed Leveling ==============================
+//===========================================================================
 
 #define ENABLE_AUTO_BED_LEVELING // Delete the comment to enable (remove // at the start of the line)
 
@@ -504,6 +538,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define ABS_PREHEAT_HOTEND_TEMP 240
 #define ABS_PREHEAT_HPB_TEMP 70
 #define ABS_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
+
+//=============================================================================
+//============================= LCD and SD support ============================
+//=============================================================================
 
 //LCD and SD support
 //#define ULTRA_LCD  //general LCD support, also 16x2
@@ -672,6 +710,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #  define DEFAULT_LCD_CONTRAST 32
 # endif
 #endif
+
+//=============================================================================
+//=============================== Extra Features ==============================
+//=============================================================================
 
 // Increase the FAN pwm frequency. Removes the PWM noise but increases heating in the FET/Arduino
 //#define FAST_PWM_FAN
